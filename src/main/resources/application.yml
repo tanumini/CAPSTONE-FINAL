@@ -1,0 +1,30 @@
+server:
+  port: 9002
+eureka:
+  client:
+    registered-with-eureka: true
+    fetch-registry : true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+spring:
+  application:
+    name: USER-SERVICE
+  datasource:
+    DriverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/capstone?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: Tanusimmu1709*
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  zipkin:
+    base-url:
+
+  security:
+    jwt:
+      token:
+        secret-key: java
+        expire-length: 300000 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 miliseconds
